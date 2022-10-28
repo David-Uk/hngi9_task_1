@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
             slackUsername: "DavidUk",
             backend: true,
             age: 31,
-            bio: "Fullstack engineer with experience "
+            bio: "Fullstack engineer with experience in Node.js, Python"
         }));
     }
     else {
