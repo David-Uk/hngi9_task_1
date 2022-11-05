@@ -9,6 +9,10 @@ app.use(cors())
 
 const PORT = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+    res.send('Up and running')
+})
+
 app.get('/api/v1', (req, res) => {
     try {
         return res.status(200).json({
