@@ -34,43 +34,43 @@ app.post('/api/v1/operation', (req, res) => {
         if (!operation_type || !x || !y) res.status(402).json({ message: 'User field cannot be empty' });
         if (Number.isInteger(x) && Number.isInteger(y)) {
             if (operation_type === 'addition') {
-                res.status(201).json({
+                res.json({
                     slackUsername: 'DavidUk',
                     result: x + y,
                     operation_type
                 })
             }
             else if (operation_type === 'subtraction') {
-                res.status(201).json({
+                res.json({
                     slackUsername: 'DavidUk',
                     result: x - y,
                     operation_type
                 })
             }
             else if (operation_type === 'multiplication') {
-                res.status(201).json({
+                res.json({
                     slackUsername: 'DavidUk',
                     result: x * y,
                     operation_type
                 })
             }
             else {
-                res.status(403).json({
+                res.json({
                     message: 'Invalid operation'
                 })
             }
         }
         else {
-            res.status(403).json({
+            res.json({
                 message: 'Invalid operation'
             })
         }
-        res.status(201).json({
+        res.json({
             message: Number.isInteger(x)
         })
     }
     catch (err) {
-        return res.status(401).json({ message: err.message })
+        return res.json({ message: err.message })
     }
 })
 
